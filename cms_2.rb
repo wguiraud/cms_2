@@ -1,6 +1,6 @@
 require 'sinatra'
-require 'redcarpet'
 require 'sinatra/reloader'
+require 'redcarpet'
 require 'pry'
 require 'tilt/erubis'
 require 'rubocop-minitest'
