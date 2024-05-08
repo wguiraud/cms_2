@@ -1,13 +1,14 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require 'redcarpet'
-require 'pry'
 require 'tilt/erubis'
-require 'rubocop-minitest'
-require 'yaml'
-require 'bcrypt'
+
+root = File.expand_path("..", __FILE__)
 
 get '/' do 
-  "hello from the application"
+  @files = Dir.glob(root + "/data/*").map do |path|
+    File.basename(path)
+  end
+  erb :index
 end
+
 
